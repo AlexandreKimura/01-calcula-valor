@@ -31,3 +31,54 @@ describe("Arredondar", () => {
     expect(resultado).toBe(1.01);
   });
 });
+
+describe("Calcular Prestações", () => {
+  test("O número de parcelas é igual ao número de prestações", () => {
+    //Premissas
+    const numeroPrestacoes = 6;
+
+    //Operação
+    const prestacoes = calculaValor.calcularPrestacoes(200, numeroPrestacoes);
+
+    //Resultado esperado
+    expect(prestacoes.length).toBe(numeroPrestacoes);
+  });
+
+  test("Uma única prestação, valor igual ao montante", () => {
+    const numeroPrestacoes = 1;
+
+    const prestacoes = calculaValor.calcularPrestacoes(50, numeroPrestacoes);
+
+    expect(prestacoes.length).toBe(numeroPrestacoes);
+    expect(prestacoes[0]).toBe(50);
+  });
+
+  test("Com duas prestações, o valor igual à metade do montante", () => {
+    const numeroPrestacoes = 2;
+
+    const prestacoes = calculaValor.calcularPrestacoes(50, numeroPrestacoes);
+
+    expect(prestacoes.length).toBe(numeroPrestacoes);
+    expect(prestacoes[0]).toBe(25);
+    expect(prestacoes[1]).toBe(25);
+  });
+
+  test("Valor da soma das prestações deve ser igual ao montante com duas casas decimais", () => {
+    //Dado (Given)
+    const numeroPrestacoes = 3;
+    const montante = 100;
+
+    //Quando (When)
+    const prestacoes = calculaValor.calcularPrestacoes(
+      montante,
+      numeroPrestacoes
+    );
+
+    //Então (Then)
+    expect(prestacoes.length).toBe(numeroPrestacoes);
+    const soma = calculaValor.arredondar(
+      prestacoes[0] + prestacoes[1] + prestacoes[2]
+    );
+    expect(soma).toBe(montante);
+  });
+});

@@ -11,7 +11,15 @@ function arredondar(valor) {
   return arredondado;
 }
 
+function calcularPrestacoes(montante, numeroParcelas) {
+  const prestacaoBase = arredondar(montante / numeroParcelas);
+  const resultado = Array(numeroParcelas).fill(prestacaoBase);
+
+  return resultado;
+}
+
 module.exports = {
   calcularMontante,
   arredondar,
+  calcularPrestacoes,
 };
