@@ -80,5 +80,36 @@ describe("Calcular Prestações", () => {
       prestacoes[0] + prestacoes[1] + prestacoes[2]
     );
     expect(soma).toBe(montante);
+
+    for (let i = 0; i < prestacoes.length - 1; i++) {
+      const j = i + 1;
+      expect(prestacoes[i]).toBeGreaterThanOrEqual(prestacoes[i]);
+    }
+  });
+
+  test("Desafio semi-final", () => {
+    debugger;
+
+    //Given
+    const numeroPrestacoes = 3;
+    const montante = 101.994;
+
+    //Quando (When)
+    const prestacoes = calculaValor.calcularPrestacoes(
+      montante,
+      numeroPrestacoes
+    );
+
+    //Então (Then)
+    expect(prestacoes.length).toBe(numeroPrestacoes);
+    const soma = calculaValor.arredondar(
+      prestacoes[0] + prestacoes[1] + prestacoes[2]
+    );
+    expect(soma).toBe(montante);
+
+    for (let i = 0; i < prestacoes.length - 1; i++) {
+      const j = i + 1;
+      expect(prestacoes[i]).toBeGreaterThanOrEqual(prestacoes[i]);
+    }
   });
 });
