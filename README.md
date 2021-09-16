@@ -38,3 +38,7 @@ Topo -> Teste ponta a ponta
 
 Obs:
 Cenários positivos e negativos
+
+**Testes de Integração**
+-> Relatório de cobertura dos testes
+-> Plano de testes
