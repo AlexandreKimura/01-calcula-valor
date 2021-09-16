@@ -27,7 +27,7 @@ const consultar = async (nome, cpf, valor, parcelas) => {
     );
     const diferencaDias = Math.round(diferenca / (1000 * 60 * 60 * 24));
 
-    if (diferencaDias) {
+    if (diferencaDias <= 30) {
       throw new Error(`última consulta realizada há ${diferencaDias} dias`);
     }
   }

@@ -24,7 +24,7 @@ app.post(
     const erros = validationResult(req);
 
     if (!erros.isEmpty()) {
-      return res.status(400).json({ erro: erros.array });
+      return res.status(400).json({ erro: erros.array() });
     }
 
     try {
