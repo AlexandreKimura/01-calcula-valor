@@ -1,4 +1,5 @@
 const calculaValor = require("../src/calcula-valor");
+require("./extensoes");
 
 describe("Calcular montante", () => {
   test("Com uma prestação, o montante é igual ao capital", () => {
@@ -76,15 +77,13 @@ describe("Calcular Prestações", () => {
 
     //Então (Then)
     expect(prestacoes.length).toBe(numeroPrestacoes);
-    const soma = calculaValor.arredondar(
-      prestacoes[0] + prestacoes[1] + prestacoes[2]
-    );
-    expect(soma).toBe(montante);
+    expect(prestacoes).tenhaSomaDeValoresIgual(montante);
 
-    for (let i = 0; i < prestacoes.length - 1; i++) {
+    /*for (let i = 0; i < prestacoes.length - 1; i++) {
       const j = i + 1;
       expect(prestacoes[i]).toBeGreaterThanOrEqual(prestacoes[j]);
-    }
+    }*/
+    expect(prestacoes).sejaDecrescente();
   });
 
   test("Desafio semi-final", () => {
@@ -102,14 +101,19 @@ describe("Calcular Prestações", () => {
 
     //Então (Then)
     expect(prestacoes.length).toBe(numeroPrestacoes);
-    const soma = calculaValor.arredondar(
+    expect(prestacoes).tenhaSomaDeValoresIgual(montante);
+    /*const soma = calculaValor.arredondar(
       prestacoes[0] + prestacoes[1] + prestacoes[2]
     );
-    expect(soma).toBe(calculaValor.arredondar(montante));
+    expect(soma).toBe(calculaValor.arredondar(montante));*/
 
-    for (let i = 0; i < prestacoes.length - 1; i++) {
+    /*for (let i = 0; i < prestacoes.length - 1; i++) {
       const j = i + 1;
       expect(prestacoes[i]).toBeGreaterThanOrEqual(prestacoes[i]);
-    }
+    }*/
+    expect(prestacoes).sejaDecrescente();
+
+    /*let meuArray = [1, 2, 3, 4];
+    expect(meuArray).not.sejaDecrescente();*/
   });
 });
