@@ -44,3 +44,54 @@ Cenários positivos e negativos
 
 - Relatório de cobertura dos testes
 - Plano de testes
+
+**Versionamento**
+
+- Controlar a versão de cada artefato
+- Permitir o trabalho colaborativo
+- Definir uma linha de base
+- Manter o armazenamento seguro
+
+**Git**
+
+- Sistema distribuído
+- Modelo snapshot
+
+**Sessões do Git**
+
+- Working Directory
+- Staging Area
+- .git directory(Repository)
+
+Obs:
+
+- Git tag -> Marcação do ponto
+- Git branch -> Cria uma nova branch
+- Git checkout 'Branch' -> Muda de branch
+- Git diff -> Diferença entre os arquivos
+- Git merge -> Mesclar branchs -> Winmerge(Ferramenta para o merge)
+
+**Git Flow**
+
+- Novas versões
+- Produção
+- Correção de problemas
+
+**Branches do GitFlow**
+
+- Master -> Código em produção
+- Develop -> Features estáveis para a próxima Release
+- Feature -> Uma branch para cada implementação
+- Release -> Isolar e estabilizar uma Release
+- Hotfix -> Utilizado para corrigir problemas na Master
+
+**Containers**
+
+- Container X VMs
+
+**Docker**
+
+- Engine
+- Hub
+- Dockerfile
+- Docker compose
